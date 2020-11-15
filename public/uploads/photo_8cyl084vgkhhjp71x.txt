@@ -1,0 +1,15 @@
+Klasa jest wzorcem – definicją tego, jak będą "wyglądały" instancje tej klasy. A instancje są obiektami stworzonymi wedle tego wzorca.
+Ogólna definicji obiektu – jest to zbiór właściwości i metod. Właściwościami są wartości przechowywane w obiekcie, a metodami – funkcje.
+Instancje są obiektami. Naprzemienna nazwa.
+Istnieją też inne obiekty – np. tworzone za pomocą nawiasów klamrowych { }.
+PRZYKŁAD:
+Załóżmy, że tworzymy bazę pracowników. Potrzebowalibyśmy zdefiniować klasę Employee (pracownik), która będzie szablonem dla każdego pracownika. W tej klasie ustalamy, że pracownik będzie miał imię, nazwisko, stanowisko czy wysokość pensji. Podobnie w tej klasie ustalimy, że pracownik ma mieć metodę raise (podwyżka), która podnosi jego pensję np. o 5%.
+Na poziomie klasy nie wiemy, jaka będzie pensja poszczególnego pracownika. Metoda raise musi tylko wiedzieć, że pracownik będzie miał przypisaną jakąś pensję, i że ma ją podnieść o 5%.
+Dopiero po napisaniu klasy możemy tworzyć jej instancje, czyli poszczególnych pracowników. Wtedy podajemy, że jak nazywa się dany pracownik, jakie ma stanowisko i jaką pensję. Po jakimś czasie (kiedy pracownik sobie na to zasłuży) możemy też wywołać jego metodę raise – nie musieliśmy tej metody pisać specjalnie dla niego, ponieważ odziedziczył ją z klasy Employee.
+PRZYKŁAD 2:
+Najłatwiej będzie Ci zapamiętać te zagadnienia na przykładzie ciasta.
+Klasa jest jak przepis na ciasto: mówi, jakie składniki i naczynia będą Ci potrzebne, a także jakie operacje będzie trzeba wykonać.
+Instancja jest jak ciasto upieczone na podstawie tego przepisu – jest obiektem stworzonym wedle szablonu, jakim jest przepis.
+Ważne, żeby nie mylić tych rzeczy ze sobą – po obiedzie nie częstujemy przepisem, a do regału nie odkładamy ciasta. ;)
+
+                                                   
