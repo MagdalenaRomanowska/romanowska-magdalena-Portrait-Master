@@ -2,6 +2,7 @@ const Photo = require("../models/photo.model");
 const Voter = require("../models/voter.model");
 const sanitize = require("mongo-sanitize");
 const requestIp = require("request-ip");
+var path = require('path');
 
 /****** SUBMIT PHOTO ********/
 
@@ -17,8 +18,8 @@ exports.add = async (req, res) => {
     }
 
     const fileName = cleanFile.path.split("/").slice(-1)[0]; // cut only filename from full path, e.g. C:/test/abc.jpg -> abc.jpg
-    const fileExt = fileName.split(".").slice(-1)[0]; //rozszerzenie pliku np jpg.
-
+    const fileExt = path.extname(cleanFile.path).split(".").slice(-1)[0]; //rozszerzenie pliku np jpg.
+        
     if (!(fileExt === "jpg" || fileExt === "png" || fileExt === "gif")) {
       throw new Error("Wrong file! Put .jpg, .png or .gif!");
     }
