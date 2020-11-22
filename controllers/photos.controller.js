@@ -2,7 +2,7 @@ const Photo = require("../models/photo.model");
 const Voter = require("../models/voter.model");
 const sanitize = require("mongo-sanitize");
 const requestIp = require("request-ip");
-var path = require('path');
+const path = require('path');
 
 /****** SUBMIT PHOTO ********/
 
@@ -17,10 +17,10 @@ exports.add = async (req, res) => {
       throw new Error("Wrong input!");
     }
 
-    const fileName = cleanFile.path.split("/").slice(-1)[0]; // cut only filename from full path, e.g. C:/test/abc.jpg -> abc.jpg
-    const fileExt = path.extname(cleanFile.path).split(".").slice(-1)[0]; //rozszerzenie pliku np jpg.
+    const fileName = path.basename(cleanFile.path); // cut only filename from full path, e.g. C:/test/abc.jpg -> abc.jpg
+    const fileExt = path.extname(cleanFile.path).toLowerCase(); //rozszerzenie pliku np jpg.
         
-    if (!(fileExt === "jpg" || fileExt === "png" || fileExt === "gif")) {
+    if (!(fileExt === ".jpg" || fileExt === ".png" || fileExt === ".gif")) {
       throw new Error("Wrong file! Put .jpg, .png or .gif!");
     }
 
@@ -52,7 +52,8 @@ exports.add = async (req, res) => {
     await newPhoto.save(); // ...save new photo in DB
     res.json(newPhoto);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err.message);
+    console.log('err:', err);
   }
 };
 
@@ -88,7 +89,7 @@ exports.vote = async (req, res) => {
           //kod sprawdzający, czy głosowano na wybrane zdjęcie. 'Some' daje 'true'.
           throw new Error("Vote already given to this photo!");
         } else {
-          var t = 1.0 / 0.0;
+          const t = 1.0 / 0.0;
           voterToUpdate.votes.push(photoToUpdate._id.toString()); //normalnie zwiększ liczbę głosów.
           voterToUpdate.save();
         }
