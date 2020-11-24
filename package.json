@@ -26,9 +26,5 @@
     "yarn": "^1.22.10"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0"
-    "eslint": "^5.16.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-react": "^7.21.5"
   }
 }
