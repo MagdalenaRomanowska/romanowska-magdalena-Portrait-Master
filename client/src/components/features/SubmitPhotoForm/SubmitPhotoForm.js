@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { PropTypes } from 'prop-types';
 import {
   Button,
   Form,
@@ -122,7 +122,11 @@ class SubmitPhotoForm extends React.Component {
       </Form>
     )
   }
+}
 
+SubmitPhotoForm.propTypes = {
+  addPhoto: PropTypes.any,
+  request: PropTypes.any,
 }
 
 export default SubmitPhotoForm;

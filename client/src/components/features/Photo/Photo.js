@@ -2,11 +2,8 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-
 import { FaRegHeart, FaSearch } from 'react-icons/fa'
-
 import { IMAGES_URL } from '../../../config';
-
 import './Photo.scss';
 
 const Photo = ({ votePhoto, _id, src, title, author, votes}) => {
@@ -40,6 +37,7 @@ Photo.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
+  votePhoto: PropTypes.any,
 }
 
 export default Photo;

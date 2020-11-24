@@ -8,7 +8,8 @@
     "start:server": "nodemon server.js",
     "start:client": "cd client && yarn start",
     "build": "cd client && yarn install && yarn build",
-    "postinstall": "cd client && yarn install"
+    "postinstall": "cd client && yarn install",
+    "testEslint": "cd client && yarn testEslint"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -25,7 +26,6 @@
     "yarn": "^1.22.10"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.21.5"
+    "babel-eslint": "^10.1.0"
   }
 }
