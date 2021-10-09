@@ -31,7 +31,9 @@ const PhotoPreview = ({ photo, request, votePhoto }) => {
 }
 
 PhotoPreview.propTypes = {
-  photo: PropTypes.object
+  photo: PropTypes.object,
+  request: PropTypes.any,
+  votePhoto: PropTypes.any
 }
 
 export default PhotoPreview;

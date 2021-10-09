@@ -19,6 +19,8 @@ const Photos = ({ data, votePhoto, request }) => {
 
 Photos.propTypes = {
   data: PropTypes.array,
+  votePhoto: PropTypes.any,
+  request: PropTypes.any
 }
 
 export default Photos;
